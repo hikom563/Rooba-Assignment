@@ -1,0 +1,164 @@
+/* CollectionsSidebar.module.css */
+
+.rightContent {
+    width: 450px;
+    background-color: rgb(83, 81, 52);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .verticalStrip {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    background-color: #ff6b6b;
+    overflow: hidden;
+    z-index: 3;
+  }
+  
+  .stripContent {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background: rgb(155, 155, 245);
+    animation: scrollStrip 5s linear infinite;
+  }
+  
+  .stripText {
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  @keyframes scrollStrip {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .rightContentText {
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make the text bolder */
+    color: white; /* Ensure text color is white for contrast */
+    margin-bottom: 10px; /* Decrease margin for spacing between lines */
+    padding-left: 20px; /* Add padding to the left */
+    line-height: 1.2; /* Adjust line height to control spacing */
+    margin-top: 10px;
+  }
+  
+  .eventName {
+    font-size: 45px; /* Increase font size */
+    font-weight: bold; /* Make the text bolder */
+    color: white; /* Ensure text color is white for contrast */
+    padding-left: 20px; /* Add padding to the left */
+    margin-top: 10px; /* Decrease margin to create a gap */
+  }
+  
+  .eventDetails {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px; /* Add padding to the left */
+    margin-top: 10px; /* Decrease margin to create a gap */
+  }
+  
+  .liveInAstrix {
+    font-size: 22px; /* Increase font size */
+    font-weight: bold; /* Make the text bolder */
+    color: white; /* Ensure text color is white for contrast */
+    margin-top: 5px; /* Decrease margin to create a gap */
+  }
+  
+  .additionalInfo {
+    color: white; /* Ensure text color is white for contrast */
+    margin-top: 10px; /* Decrease margin to create a gap */
+    padding-left: 20px; /* Add padding to the left */
+  }
+  
+  .artistLineup {
+    font-size: 30px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bolder */
+    color: white; /* Ensure text color is white for contrast */
+    margin-top: 10px; /* Decrease margin to create a gap */
+    padding-left: 20px; /* Add padding to the left */
+  }
+  
+  .collectiblePhotos {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px; /* Add padding to the left */
+    margin-top: 10px; /* Decrease margin to create a gap */
+    margin-bottom: 60px; /* Add margin to create space for the button */
+  }
+  
+  .collectiblePhoto {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+    margin-right: 10px; /* Add margin for spacing between photos */
+    transform: perspective(1000px) translateZ(30px); /* Add 3D effect */
+  }
+  
+  .collectiblePhoto.halfVisible {
+    position: relative;
+    right: 0; /* Remove the offset to ensure it aligns with other photos */
+  }
+  
+  .joinWaitlistButton {
+    position: absolute;
+    bottom: 20px; /* Adjust bottom position as needed */
+    right: 20px; /* Adjust right position as needed */
+    background-color: yellow; /* Button background color */
+    color: black; /* Button text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Make text bold */
+    border-radius: 5px; /* Add border radius for rounded corners */
+  }
+  
+  /* Media Queries for Tablet Mode */
+  @media (max-width: 1024px) {
+    .rightContent {
+      width: 100%;
+      position: relative;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  
+    .rightContentText, .eventName, .eventDetails, .additionalInfo, .artistLineup {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .joinWaitlistButton {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      margin-top: 20px;
+    }
+  
+    .verticalStrip {
+      left: 0;
+      width: 100%;
+      height: 50px;
+    }
+  
+    .stripContent {
+      height: 100%;
+      animation: scrollStrip 10s linear infinite;
+    }
+  }

@@ -1,0 +1,273 @@
+/* src/App.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  background-color: #e0e0e0; /* Background color */
+  position: relative; /* Add relative positioning */
+  height: 100%; /* Extend to full height */
+}
+
+.logo {
+  position: absolute;
+  top: 5px; /* Adjust top position as needed */
+  left: 5px; /* Adjust left position as needed */
+  height: 80px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+  z-index: 4; /* Ensure it is above other content */
+}
+
+.centerContent {
+  flex: 1; /* Adjust flex to allow space for the rightContent */
+  display: flex;
+  justify-content: center; /* Center the carousel horizontally */
+  align-items: center; /* Center the carousel vertically */
+  position: relative; /* Add relative positioning */
+  z-index: 1; /* Ensure it is below the rightContent */
+  margin-left: -200px; /* Adjust this value to move the carousel further to the left */
+}
+
+/* Right Content Styles */
+.rightContent {
+  width: 450px; /* Adjust width as needed */
+  background-color: rgb(83, 81, 52); /* Different background color */
+  position: absolute; /* Position it absolutely */
+  right: 0; /* Align to the right */
+  top: 0; /* Extend to the top */
+  bottom: 0;
+  z-index: 2; /* Ensure it is above the centerContent */
+  padding: 20px; /* Add padding for inner spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out the content */
+}
+
+.rightContentText {
+  font-size: 24px; /* Increase font size */
+  font-weight: bold; /* Make the text bolder */
+  color: white; /* Ensure text color is white for contrast */
+  margin-bottom: 40px; /* Add more margin for spacing between lines */
+  padding-left: 20px; /* Add padding to the left */
+  line-height: 1.2; /* Adjust line height to control spacing */
+  margin-top: 10px;
+}
+
+.eventName {
+  font-size: 45px; /* Increase font size */
+  font-weight: bold; /* Make the text bolder */
+  color: white; /* Ensure text color is white for contrast */
+  padding-left: 20px; /* Add padding to the left */
+  margin-top: 40px; /* Add more margin to create a gap */
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px; /* Add padding to the left */
+  margin-top: 20px; /* Add margin to create a gap */
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  color: white; /* Ensure text color is white for contrast */
+  margin-bottom: 10px; /* Add margin for spacing between items */
+}
+
+.icon {
+  margin-right: 10px; /* Add space between icon and text */
+}
+
+.additionalInfo {
+  color: white; /* Ensure text color is white for contrast */
+  margin-top: 20px; /* Add margin to create a gap */
+  padding-left: 20px; /* Add padding to the left */
+}
+
+.artistLineup {
+  font-size: 30px; /* Adjust font size as needed */
+  font-weight: bold; /* Make the text bolder */
+  color: white; /* Ensure text color is white for contrast */
+  margin-top: 20px; /* Add margin to create a gap */
+  padding-left: 20px; /* Add padding to the left */
+}
+
+.carouselContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 300px; /* Adjust height as needed */
+  margin-top: 40px; /* Add more margin to create a gap */
+}
+
+.photo {
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+}
+
+.photo img {
+  width: 200px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+}
+
+.left {
+  transform: translateX(-150px) scale(0.8); /* Move left and scale down */
+  opacity: 0.5; /* Half opacity */
+  z-index: 1; /* Send to back */
+}
+
+.center {
+  transform: translateX(0) scale(1.1); /* Center and scale up */
+  z-index: 2; /* Bring to front */
+}
+
+.right {
+  transform: translateX(150px) scale(0.8); /* Move right and scale down */
+  opacity: 0.5; /* Half opacity */
+  z-index: 1; /* Send to back */
+}
+
+.qrImage {
+  position: absolute;
+  bottom: 20px; /* Adjust bottom position as needed */
+  left: 40px; /* Adjust left position as needed */
+  width: 50px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.joinWaitlistButton {
+  position: absolute;
+  bottom: 20px; /* Adjust bottom position as needed */
+  right: 20px; /* Adjust right position as needed */
+  background-color: yellow; /* Button background color */
+  color: black; /* Button text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 16px; /* Adjust font size as needed */
+  font-weight: bold; /* Make text bold */
+  border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+.bottomNav {
+  position: absolute; /* Position it absolutely */
+  bottom: 10px; /* Adjust bottom position as needed */
+  left: 10px; /* Adjust left position as needed */
+  z-index: 3; /* Ensure it is above other content */
+}
+
+.verticalStrip {
+  position: absolute;
+  left: -50px; /* Adjust as needed to position it correctly */
+  top: 0;
+  width: 70px; /* Adjust width as needed */
+  height: 100%;
+  background-color: #ff6b6b; /* Adjust color as needed */
+  overflow: hidden;
+  z-index: 3; /* Ensure it is above the rightContent */
+}
+
+.stripContent {
+  position: absolute;
+  width: 100%;
+  height: 200%; /* Double the height to allow for scrolling effect */
+  background: rgb(155, 155, 245); /* Adjust gradient as needed */
+  animation: scrollStrip 5s linear infinite; /* Adjust duration as needed */
+}
+
+@keyframes scrollStrip {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.stripText {
+  color: white;
+  font-size: 12px; /* Adjust font size as needed */
+  padding: 10px;
+}
+
+.fancyText {
+  position: absolute;
+  left: 20px; /* Adjust as needed */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  font-size: 80px; /* Adjust font size as needed */
+  font-family: 'Cursive', sans-serif; /* Use a fancy font */
+  color: #333; /* Adjust color as needed */
+  z-index: 0; /* Ensure it is behind the carousel */
+  text-align: left; /* Align text to the left */
+  line-height: 1.2; /* Adjust line height as needed */
+}
+
+/* Media Queries for Tablet Mode */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .centerContent {
+    margin-left: 0;
+  }
+
+  .rightContent {
+    width: 100%;
+    position: relative;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .rightContentText, .eventName, .eventDetails, .additionalInfo, .artistLineup {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .joinWaitlistButton {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: 20px;
+  }
+
+  .bottomNav {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 20px;
+  }
+
+  .verticalStrip {
+    left: 0;
+    width: 100%;
+    height: 50px;
+  }
+
+  .stripContent {
+    height: 100%;
+    animation: scrollStrip 10s linear infinite;
+  }
+
+  .fancyText {
+    font-size: 40px;
+    left: 10px;
+    top: 10%;
+    transform: translateY(0);
+  }
+}

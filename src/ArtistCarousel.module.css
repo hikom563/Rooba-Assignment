@@ -1,0 +1,49 @@
+/* src/ArtistCarousel.module.css */
+.carouselContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 300px; /* Adjust height as needed */
+    margin-top: 5px; /* Add margin to create a gap */
+  }
+  
+  .photo {
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .photo img {
+    width: 170px; /* Adjust width as needed */
+    height: 100px; /* Maintain aspect ratio */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  }
+  
+  .left {
+    transform: translateX(-150px) scale(0.8); /* Move left and scale down */
+    opacity: 0.5; /* Half opacity */
+    z-index: 1; /* Send to back */
+  }
+  
+  .center {
+    transform: translateX(0) scale(1.1); /* Center and scale up */
+    z-index: 2; /* Bring to front */
+  }
+  
+  .right {
+    transform: translateX(150px) scale(0.8); /* Move right and scale down */
+    opacity: 0.5; /* Half opacity */
+    z-index: 1; /* Send to back */
+  }
+  
+  /* Media Queries for Tablet Mode */
+  @media (max-width: 1024px) {
+    .photo img {
+      width: 120px;
+      height: 70px;
+    }
+  
+    .left, .center, .right {
+      transform: translateX(0) scale(1);
+    }
+  }
